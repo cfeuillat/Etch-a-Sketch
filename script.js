@@ -21,3 +21,8 @@ for (let i = 0; i < 16; i++) {
 
 
 const square = document.querySelectorAll(".square");
+square.forEach((el) => {
+    el.addEventListener('mouseover', function() {
+        el.style.backgroundColor = "black";
+    })
+})
