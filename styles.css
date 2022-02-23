@@ -1,15 +1,18 @@
 .content {
     display: flex;
     flex-direction: column;
+    height: 500px;
+    width: 500px;
 }
 
 .line {
     display: flex;
+    flex-grow: 1;
+    align-items: stretch;
 }
 
 .square {
-    width: 20px;
-    height: 20px;
+    flex-grow: 1;
     border: solid #000000;
     border-width: 0.05px;
     background-color: lightgray;
