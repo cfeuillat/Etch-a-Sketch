@@ -1,4 +1,7 @@
-const content = document.querySelector(".content");
+const content = document.querySelector(".content")
+const clear = document.querySelector(".clear")
+
+
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -7,6 +10,17 @@ function getRandomColor() {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+}
+
+
+function draw(mode) {
+    const square = document.querySelectorAll(".square");
+    square.forEach((el) => {
+        el.addEventListener('mouseover', function() {
+            el.style.backgroundColor = "black";
+        })
+
+    })
 }
 
 function make_grid(size) {
@@ -28,24 +42,10 @@ function make_grid(size) {
     draw();
 }
 
-
-function draw() {
-    const square = document.querySelectorAll(".square");
-    square.forEach((el) => {
-        el.addEventListener('mouseover', function() {
-            el.style.backgroundColor = getRandomColor();
-        })
-    })
-
-}
-
-
-let clear = document.querySelector(".clear");
-
 clear.addEventListener('click', function() {
     size = Number(prompt("Chose grid size (please enter a number between 2 and 64)"));
     make_grid(size);
 })
 
 
-make_grid(4);
+make_grid(16);
